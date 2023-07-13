@@ -1,4 +1,10 @@
+import timer from '/timer.js';
 
+// Start the timer and call generateQuiz when the page loads
+window.onload = function() {
+    timer.start();
+    generateQuiz();
+};
 
 function generateQuiz() {
     // Create an array of questions.
@@ -36,3 +42,9 @@ function generateQuiz() {
     ];
     // Rest of code here...
   }
+
+// Function to save the score in local storage
+function saveScore(score) {
+    localStorage.setItem('quizScore', score);
+    console.log('Score saved to local storage.');
+}
