@@ -1,18 +1,11 @@
-import timer from '/timer.js';
-
-// Get the question and answer elements from the HTML
-const questionElement = document.getElementById('question-placeholder');
-const answerElements = document.getElementsByClassName('answer-option');
-
 // Start the timer and call generateQuiz when the page loads
 window.onload = function() {
-  timer.start();
   generateQuiz();
 };
 
-function generateQuiz() {
+function generateQuiz() {  
   // An array of questions.
-  let questions = [
+  const questions = [
     {
       question: "What method is used to add an element to the end of an array in JavaScript?",
       answers: ["push()", "add()", "concat()", "append()"],
@@ -44,8 +37,32 @@ function generateQuiz() {
       correctAnswer: 3 // Index of the correct answer
     }
   ];
+  
+  const questionElement = document.getElementById('question-placeholder');
+  const answerElements = document.getElementsByClassName('answer-option');
 
-  // Rest of the code...
+  // Set the current question and answers
+  setQuestionAndAnswers(questions[0]);
+
+  // Add event listeners to the answer buttons
+  for (let i = 0; i < answerElements.length; i++) {
+    answerElements[i].addEventListener('click', function() {
+      checkAnswer(i);
+  });
+}
+  // Variable to keep track of the current question index
+    let currentQuestionIndex = 0;
+
+  // Variable to store the score
+    let score = 0;
+
+  // Function to set the current question and answers
+  function setQuestionAndAnswers(question) {
+    questionElement.textContent = question.question;
+    for (let i = 0; i < answerElements.length; i++) {
+      answerElements[i].textContent = question.answers[i];
+    }
+  }
 
   // Function to check the selected answer
   function checkAnswer(selectedIndex) {
@@ -73,7 +90,6 @@ function generateQuiz() {
     });
   }
 
-  // Rest of the code...
 }
 
 // Function to save the score in local storage
