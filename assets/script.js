@@ -1,5 +1,9 @@
 import timer from '/timer.js';
 
+// Get the question and answer elements from the HTML
+const questionElement = document.getElementById('question-placeholder');
+const answerElements = document.getElementsByClassName('answer-option');
+
 // Start the timer and call generateQuiz when the page loads
 window.onload = function() {
   timer.start();
@@ -40,7 +44,7 @@ function generateQuiz() {
       correctAnswer: 3 // Index of the correct answer
     }
   ];
-  
+
   // Rest of the code...
 
   // Function to check the selected answer
@@ -57,9 +61,16 @@ function generateQuiz() {
       setQuestionAndAnswers(questions[currentQuestionIndex]);
     } else {
       // Quiz ended
-      saveScore(score);
-      window.location.href = '/complete.html'; // Redirect to complete.html
+      saveScore(score); // Save the score in local storage
+      window.location.href = '/completed.html'; // Redirect to completed.html page
     }
+  }
+
+  // Add event listeners to the answer buttons
+  for (let i = 0; i < answerElements.length; i++) {
+    answerElements[i].addEventListener('click', function() {
+      checkAnswer(i);
+    });
   }
 
   // Rest of the code...
