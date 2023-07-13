@@ -26,7 +26,7 @@ h1 {
   margin: 0 auto;
 }
 
-/* using classes as quick styling like hommade bootstrap or something like a madwoman */
+/* using classes as quick styling as homemade bootstrap or something like a madwoman */
 /* trick learned from James Q Quick's "Quick Quiz" tutorials. Say that 5 times fast */
 
 .flex-col {
@@ -55,16 +55,19 @@ h1 {
 
 .btn {
   padding: 1rem 2rem;
+  width: 30rem;
+  text-align: center;
   border: 1px solid #f1f1f1;
   border-radius: 5px;
+  margin-bottom: 2rem;
   background-color: transparent;
   color: #f1f1f1;
   font-size: 2rem;
-  cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
+  cursor: pointer;  
   background-color: #f1f1f1;
   color: #242424;
 }
