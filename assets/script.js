@@ -4,7 +4,7 @@ window.onload = function() {
 };
 
 function generateQuiz() {  
-  // An array of questions.
+  // An array of questions. 
   const questions = [
     {
       question: "What method is used to add an element to the end of an array in JavaScript?",
