@@ -11,7 +11,7 @@ To get started with the code quiz project, follow these steps:
 
 OR
 
-2. Try it out at the deployed page link here on GitHub :
+2. Try it out at the deployed page link here on GitHub : https://childofrainydays.github.io/guess-machine/
 
 ## Project Structure
 
